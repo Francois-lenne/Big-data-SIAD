@@ -35,3 +35,5 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [Numpy](https://numpy.org/)
 * [tqdm](https://tqdm.github.io/)
 * [re](https://docs.python.org/3/library/re.html)
+* [spacy](https://spacy.io/usage)
+* [sympi](https://www.sympy.org/en/index.html)
