@@ -1,22 +1,19 @@
-$(document).ready(function() {
+
   $('#sendbut').click(function() {
-    var var1 = $('#var1').val();
-    var var2 = $('#var2').val();
-    
-    var data = { "var1": 1, "var2": 2};
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "http://localhost/predictjson", true);
-	xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	xhr.onreadystatechange = function () {
-	  if (xhr.readyState === 4 && xhr.status === 200) {
-	    var jsonResponse = JSON.parse(xhr.responseText);
-	    console.log(jsonResponse)
-	  }
-	};
-	xhr.send(JSON.stringify(data));
 
+  	var input1 = $("#var1").val();
+    var input2 = $("#var2").val();
 
+  	$.ajax({
+   url: "http://localhost:8000/check",
+   type: "POST",
+   data: JSON.stringify({ "var1": input1, "var2": input2 }),
+   contentType: "application/json; charset=utf-8",
+   dataType: "json",
+   success: function (data) {
+      console.log(data);
+   }
+});
 
-	});
   });
 

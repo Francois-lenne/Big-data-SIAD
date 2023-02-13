@@ -1,18 +1,31 @@
 from fastapi import FastAPI, Request, Response
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from model import *
 import json
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials = True,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class Tweet(BaseModel):
+    var1: int
+    var2: int
+
 @app.get("/")
 async def root():
     return {"message": "Bonjour, je suis l'API"}
 
-@app.post("/predictjson")
-async def predict(request: Request):
-    data = await request.json()
-    var1 = data.get("var1")
-    var2 = data.get("var2")
+@app.post("/check")
+async def check(tweet: Tweet):
+    var1 = tweet.var1
+    var2 = tweet.var2
     model = ClassificationModel()
     model.train()
     X = np.array([[var1, var2]])
