@@ -28,7 +28,7 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 
 
 
-## Package utilisé 
+## Package utilisé pour réaliser le modèle 
 
 
 * [Pandas](https://pandas.pydata.org/)
@@ -38,3 +38,17 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [spacy](https://spacy.io/usage)
 * [sympi](https://www.sympy.org/en/index.html)
 * [geotext](https://pypi.org/project/geotext/)
+* [Sklearn](https://scikit-learn.org/stable/)
+
+
+
+## Les fonctions a implémenté 
+
+
+### 
+
+
+
+
+
+  
