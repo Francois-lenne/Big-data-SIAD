@@ -20,7 +20,7 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [Virginie Deslart](https://www.linkedin.com/in/virginie-delsart-9a45b81b9/?originalSubdomain=fr), Clerse/ULille
 
 
-## Stack technique du projet:computer:
+## Stack technique du projet :computer:
 
 
 [![My Skills](https://skills.thijs.gg/icons?i=py,md,git,regex)](https://skills.thijs.gg)
@@ -30,7 +30,7 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 
 
 
-## Package utilisé pour réaliser le modèle 
+## Package utilisé pour réaliser les retraitements et le modèle
 
 
 * [Pandas](https://pandas.pydata.org/)
