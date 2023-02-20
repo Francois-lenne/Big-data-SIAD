@@ -179,7 +179,7 @@ def remove_stopwords(text):
     return text
 
 
-def DataPreparation(train, sample_type = 'train'):
+def DataPreparation(train, sample_type):
 
     train['location'] = train['location'].astype(str)
 
@@ -245,17 +245,22 @@ def DataPreparation(train, sample_type = 'train'):
     train_variables_extracted = train[['hashtags_b','names_b','rt_path_b','locations_b', 'Subjectivity', 'Polarity']]
     train_location = train[['city','country','precision']]
 
-    final_train = pd.concat([train_word_features, # variables crÃ©Ã©es Ã  l'aide des tweets (features TF IDF)
-                             train_location, # variables crÃ©Ã©es Ã  partir des localisations
-                             train_variables_extracted], # variables crÃ©Ã©es via l'extraction de donnÃ©es dans les tweets
-                             axis='columns')
+    print("7.1", train_variables_extracted, train_location)
 
+     # final_train = pd.concat([train_word_features, # variables crÃ©Ã©es Ã  l'aide des tweets (features TF IDF)
+                            # train_location, # variables crÃ©Ã©es Ã  partir des localisations
+                            # train_variables_extracted], # variables crÃ©Ã©es via l'extraction de donnÃ©es dans les tweets
+                            # axis='columns')
+
+
+    final_train = train[['hashtags_b','names_b','rt_path_b','locations_b', 'Subjectivity', 'Polarity','city','country','precision']]
+    print("7.2", final_train)
     X_train = final_train.reset_index(drop=True)
 
     print(train)
     print('phase 8')
 
-    if sample_type == 'train':
+    if sample_type == True:
         if 'target' in train:
             y_train = train['target']
             return X_train, y_train
