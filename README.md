@@ -3,12 +3,14 @@
 
 ## Contexte 
 
-Dans le cadre de notre projet Big data du master SIAD, nous participons à la compétition Kaggle Tweet Disaster. Notre projet est compsé de 4 membres 
+Dans le cadre de notre projet Big data du master SIAD, nous participons à la compétition Kaggle Tweet Disaster. Notre objectif est de définir si un tweet concerne réellement un événement ou non. Pour ce faire, nous avons utilisé les méthodes lié au domaine du NLP (Natural Language Process). Pour retraiter les tweet (lématisations ...). Puis la création de variable avec les mots  les plus utilisés. Nous avons aussi utilisé des package comme Geotext qui utilise des modèles de machine learning pour définir si le lieux est une ville, pays ... Ces packages nous permettront ainsi d'enrichir notre jeu de donnée.
 
-* Louis Toulouse
-* François Lenne
-* Yoann Playez 
-* Ronan Patin
+Notre projet est compsé de **4 membres** :
+
+* [Louis Toulouse](https://www.linkedin.com/in/louis-toulouse/)
+* [François Lenne](https://www.linkedin.com/in/fran%C3%A7ois-lenne-5975b9174/)
+* [Yoann Playez](https://www.linkedin.com/in/yoann-playez-075ab7207/)
+* [Ronan Patin](https://www.linkedin.com/in/ronan-patin-186aab192/)
 
 Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 
