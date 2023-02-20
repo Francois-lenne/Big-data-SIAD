@@ -17,44 +17,36 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.preprocessing import StandardScaler
 import joblib
+from textblob import TextBlob
 nlp = spacy.load("en_core_web_sm")
+stopwords = spacy.lang.en.stop_words.STOP_WORDS
 
 def precision(text):
-    rep = '0'
-    reg1 = r'(,)'
-    p = re.compile(reg1)
-    check = re.search(reg1,text)
-    if check is not None:
-      rep = '1'
-    return rep
+        rep = '0'
+        reg1 = r'(,)'
+        p = re.compile(reg1)
+        check = re.search(reg1,text)
+        if check is not None:
+            rep = '1'
+        return rep
 
-def city(tweet):
-    tweet.capitalize()
-    places = GeoText(tweet)
+def city(text):
+    str(text).capitalize()
+    places = GeoText(text)
     if len(places.cities) == 0:
         cities = 0
     else:
         cities = 1
     return cities
 
-def country(tweet):
-    tweet.capitalize()
-    places = GeoText(tweet)
+def country(text):
+    str(text).capitalize()
+    places = GeoText(text)
     if len(places.countries) == 0:
         countries = 0
     else:
         countries = 1
     return countries
-
-
-def recupHashtag(text):
-    reg = r"#(\w+)"
-    p = re.compile(reg)
-    check = re.search(reg,text)
-    if check is not None:
-        ge = p.findall(text)
-        ge_join = ' '.join(ge)
-        return ge_join
 
 def recupHashtagBinaire(text):
     rep = '0'
@@ -62,18 +54,8 @@ def recupHashtagBinaire(text):
     p = re.compile(reg)
     check = re.search(reg,text)
     if check is not None:
-      rep = '1'
+        rep = '1'
     return rep
-
-
-def recupName(text):
-    reg = r"@(\w+)"
-    p = re.compile(reg)
-    check = re.search(reg,text)
-    if check is not None:
-        ge = p.findall(text)
-        ge_join = ' '.join(ge)
-        return ge_join
 
 def recupNameBinaire(text):
     rep = '0'
@@ -81,9 +63,8 @@ def recupNameBinaire(text):
     p = re.compile(reg)
     check = re.search(reg,text)
     if check is not None:
-      rep = '1'
+        rep = '1'
     return rep
-
 
 def recupDate(text):
     reg = r"([A-Za-z]{3})\s(\d{1,2}),\s(\d{4})"
@@ -99,22 +80,8 @@ def recupDateBinaire(text):
     p = re.compile(reg)
     check = re.search(reg,text)
     if check is not None:
-      rep = '1'
+        rep = '1'
     return rep
-
-
-def getChemin(text):
-    reg1 = r'(https?:\/\/[^\s]+)'
-    reg2 = r'(https?)://([^:/]+)(?::(\d+))?(/[^?]*)?(\?[^#]*)?(#.*)?'
-    p = re.compile(reg1)
-    check = re.search(reg1,text)
-    if check is not None:
-        ge = p.findall(text)
-        for val in ge:
-            match = re.search(reg2,val)
-            if match:
-                rt = match.group(4)
-            return rt
 
 def getCheminBinaire(text):
     rep = '0'
@@ -122,9 +89,8 @@ def getCheminBinaire(text):
     p = re.compile(reg1)
     check = re.search(reg1,text)
     if check is not None:
-      rep = '1'
+        rep = '1'
     return rep
-
 
 def getLocation(text):
     global nlp
@@ -144,44 +110,51 @@ def getLocationBinaire(text):
             rep = "1"
     return rep
 
+def getSubjectivity(text):
+    subj = TextBlob(text).sentiment.subjectivity
+    if subj < 0:
+        score = 2
+    elif subj == 0:
+        score = 0
+    else:
+        score = 1
+    return score
+    
+def getPolarity(text):
+    polar = TextBlob(text).sentiment.polarity
+    if polar < 0:
+        score = 2
+    elif polar == 0:
+        score = 0
+    else:
+        score = 1
+    return score
 
 def preprocessing(text):
     text = str(text)
-
-    # Harmonisation - mise en minuscule
     text = text.lower()
-
-    # Gestion des accents et ponctuations
-    text = re.sub(r'https?://\S+', '', text)
-    text = re.sub(r'#\S+', '', text)
-    text = re.sub(r'@\S+', '', text)
-    text = re.sub("\d+", " ", text) # normalisation nombres
-    text = re.sub('[éèê]', "e", text) # retrait accents
-    text = re.sub("[.,;:!?]", " ", text)
-    text = re.sub("[|{}\[\]()«»/]", " ", text)
-    text = re.sub("[“”]", " ", text)
-    text = re.sub("'", " ", text)
-    text = re.sub("’", " ", text)
-    text = re.sub('"', " ", text)
-    text = re.sub('[+-]', " ", text)
-    text = re.sub('[=*/]', " ", text)
-    text = re.sub("ô", "o", text)
-    text = re.sub("°", "", text)
-
-    # Gestion des symboles
-    text = re.sub("[€%$£]", "", text)
-
-    # Gestions des retours à la ligne ou fin de lignes
-    text = re.sub('\r\n', " ", text)
-    text = re.sub('\n', " ", text)
-
-    # Gestion des espaces
-    text = re.sub('\s+', " ", text) # espaces en trop
-    text = text.rstrip(" ") # à droite
-    text = text.lstrip(" ") # à gauche
-
+    text = re.sub(r'https?://\S+', '', text) # retrait liens
+    text = re.sub(r'&amp|& amp', '&', text) # remplacement &amp par &
+    text = re.sub(r'#\S+', '', text) # retrait hashtags
+    text = re.sub(r'@\S+', '', text) # retrait arobases
+    text = re.sub('[Ã©Ã¨Ãª]', "e", text) # retrait accents sur le e
+    text = re.sub("Ã´", "o", text) # retrait accents sur le o
+    text = re.sub("[.,;:!?]", " ", text) # retrait ponctuation
+    text = re.sub("[|{}\[\]()Â«Â»/]", " ", text) # retrait parenthÃ¨ses, crochets, guillemets, slashs...
+    text = re.sub("[â€œâ€]", " ", text) # retrait guillemets (autre forme)
+    text = re.sub("'", " ", text) # retrait apostrophes
+    text = re.sub("â€™", " ", text) # retrait apostrophes (autre forme)
+    text = re.sub('"', " ", text) # retrait quotes
+    text = re.sub('[+-]', " ", text) # retrait + et -
+    text = re.sub('[=*/]', " ", text) # retrait opÃ©rateurs
+    text = re.sub("Â°", "", text) # retrait symbole Â°
+    text = re.sub("[â‚¬%$Â£]", "", text) # retrait symboles devises
+    text = re.sub('\r\n', " ", text) # retrait retour charriot/retour Ã  la ligne
+    text = re.sub('\n', " ", text) # retrait retour Ã  la ligne
+    text = re.sub('\s+', " ", text) # retrait espaces en trop
+    text = text.rstrip(" ") # retrait espaces Ã  droite
+    text = text.lstrip(" ") # retrait espaces Ã  gauche
     return text
-
 
 def Lemmatization(train,texts):
     pbar = tqdm.tqdm(total=train.shape[0])
@@ -192,107 +165,143 @@ def Lemmatization(train,texts):
         new_text = []
         for token in doc: 
             new_text.append(token.lemma_)
-        final = " ".join(new_text)
+            final = " ".join(new_text)
         texts_out.append(final)
-        pbar.update(1) # actualise la progress bar
     return (texts_out)
-    pbar.close()
 
 def tokenize(text):
     text_split = [word for word in text.split()]
     return text_split
 
-stopwords = spacy.lang.en.stop_words.STOP_WORDS
-
-stopwords = [word.lower() for word in stopwords]
-
-# conservation de certains stopwords
-liste = [
-    # mots à conserver (à exclure de la liste des stopwords par défaut)
-]
-
-stopwords = [word for word in stopwords if word not in liste]
-
-
 def remove_stopwords(text):
+    global stopwords
     text = [word for word in text if (len(word) > 2) and (word not in stopwords)]
     return text
 
-def detokenize_text(txt):
-    txt = ' '.join([word for word in txt])
-    return txt
 
-def make_bigrams(data_words_train):
-    bigram = gensim.models.Phrases(data_words_train, min_count=5, threshold=0,
-                              #  connector_words=stopwords,
-                               scoring = 'npmi')
-    bigram_mod = gensim.models.phrases.Phraser(bigram)
-    return [bigram_mod[doc] for doc in data_words_train]
+def DataPreparation(train, sample_type = 'train'):
 
-def make_trigrams(data_words_train):
-    trigram = gensim.models.Phrases(bigram[data_words_train], threshold=0,
-                              #  connector_words=stopwords,
-                                scoring = 'npmi')
-    bigram = gensim.models.Phrases(data_words_train, min_count=5, threshold=0,
-                              #  connector_words=stopwords,
-                               scoring = 'npmi')
-    bigram_mod = gensim.models.phrases.Phraser(bigram)
-    trigram_mod = gensim.models.phrases.Phraser(trigram)
-    return [trigram_mod[bigram_mod[doc]] for doc in data_words_train]
-
-def transformation(train, trainning ):
     train['location'] = train['location'].astype(str)
+
     train['city'] = train['location'].apply(city)
+    print(train)
+    print('phase 1')
     train['country'] = train['location'].apply(country)
     train['precision'] = train['location'].apply(precision)
-    train['hashtags'] = train['text'].apply(recupHashtag)
     train['hashtags_b'] = train['text'].apply(recupHashtagBinaire)
-    train['names'] = train['text'].apply(recupName)
     train['names_b'] = train['text'].apply(recupNameBinaire)
     train['dates'] = train['text'].apply(recupDate)
     train['dates_b'] = train['text'].apply(recupDateBinaire)
     train['locations'] = train['text'].apply(getLocation)
     train['locations_b'] = train['text'].apply(getLocationBinaire)
-    train['rt_path'] = train['text'].apply(getChemin)
     train['rt_path_b'] = train['text'].apply(getCheminBinaire)
+    train['Subjectivity'] = train['text'].apply(getSubjectivity)
+    train['Polarity'] = train['text'].apply(getPolarity)
+    print(train)
+    print('phase 2')
     train['text_CLEAN'] = train['text'].apply(lambda x: preprocessing(x))
     train['text_CLEAN_LMT'] = Lemmatization(train,train['text_CLEAN'])
     train['text_CLEAN_LMT_TOKEN'] = train['text_CLEAN_LMT'].apply(lambda x: tokenize(x))
+    print(train)
+    print('phase 3')
+
+    global nlp
+    global stopwords
+    stopwords = [word.lower() for word in stopwords]
+
     train['text_CLEAN_LMT_TOKEN_WSW'] = train['text_CLEAN_LMT_TOKEN'].apply(lambda x: remove_stopwords(x))
+    print(train)
+    print('phase 4')
     data_words_train = train['text_CLEAN_LMT_TOKEN_WSW'].values.tolist()
+    bigram = gensim.models.Phrases(data_words_train, min_count=5, threshold=0,scoring = 'npmi')
+    bigram_mod = gensim.models.phrases.Phraser(bigram)
+    print(train)
+    print('phase 5')
+
+    def make_bigrams(texts):
+        return [bigram_mod[text] for text in texts]
+
     train['text_CLEAN_LMT_TOKEN_WSW_BIGRAMS'] = make_bigrams(data_words_train)
+    
+    def detokenize_text(txt):
+        txt = ' '.join([word for word in txt])
+        return txt
+
     train['text_CLEAN_LMT_WSW_BIGRAMS'] = train['text_CLEAN_LMT_TOKEN_WSW_BIGRAMS'].apply(lambda x: detokenize_text(x))
-    vectorizer = TfidfVectorizer()
-    if(trainning == True):
-        vectorizer_fitted = vectorizer.fit(train['text_CLEAN_LMT_WSW_BIGRAMS'].astype('U'))
-        joblib.dump(vectorizer_fitted, 'vectors.gz')
-        vectors = vectorizer_fitted.transform(train['text_CLEAN_LMT_WSW_BIGRAMS'].astype('U'))
-    else:
-        vectorizer_fitted = joblib.load('vectors.gz')
-        vectors = vectorizer_fitted.transform(train['text_CLEAN_LMT_WSW_BIGRAMS'].astype('U'))
-    feature_names = vectorizer_fitted.get_feature_names_out()
+    print(train)
+    print('phase 6')
+    # Fitter le vectorizer en amont sur les donnÃ©es d'entraÃ®nement
+
+    
+    vectorizer = joblib.load('vectorizer.gz')
+   
+    vectors = vectorizer.transform(train['text_CLEAN_LMT_WSW_BIGRAMS'].astype('U'))
+    feature_names = vectorizer.get_feature_names_out()
     dense = vectors.todense()
-    train_Tfidf = pd.DataFrame(dense, columns=feature_names)
-    mean_Tfidf = []
-    for feature in train_Tfidf.columns.values:
-        mean_Tfidf.append(np.mean(train_Tfidf[feature]))
-    train_mean_Tfidf = pd.DataFrame({'word': train_Tfidf.columns.values,'mean_Tfidf': mean_Tfidf})
-    threshold = np.percentile(train_mean_Tfidf['mean_Tfidf'],50)
-    features_to_delete = train_mean_Tfidf['word'].loc[train_mean_Tfidf['mean_Tfidf'] < threshold]
-    for feature in features_to_delete:
-        stopwords.extend(feature)
-    train['text_CLEAN_LMT_WSW_BIGRAMS_FILTERED'] = [text.split() for text in train['text_CLEAN_LMT_WSW_BIGRAMS'].astype(str)]
-    train['text_CLEAN_LMT_WSW_BIGRAMS_FILTERED'] = train['text_CLEAN_LMT_WSW_BIGRAMS_FILTERED'].apply(remove_stopwords)
-    train['text_CLEAN_LMT_WSW_BIGRAMS_FILTERED'] = train['text_CLEAN_LMT_WSW_BIGRAMS_FILTERED'].apply(lambda x: detokenize_text(x))
-    train_word_features = vectorizer_fitted.fit_transform(train['text_CLEAN_LMT_WSW_BIGRAMS_FILTERED'])
-    feature_names = vectorizer_fitted.get_feature_names_out()
-    dense = train_word_features.todense()
     train_word_features = pd.DataFrame(dense, columns=feature_names)
-    X_train = pd.concat([train_word_features, train[['hashtags_b','names_b','rt_path_b','locations_b']]], axis='columns').reset_index(drop=True)
-    if(trainning == True):
-        y_train = train['target']
-        return X_train, y_train
-        print('Préparation entraînement OK')
+
+    print(train)
+    print('phase 7')
+    train_variables_extracted = train[['hashtags_b','names_b','rt_path_b','locations_b', 'Subjectivity', 'Polarity']]
+    train_location = train[['city','country','precision']]
+
+    final_train = pd.concat([train_word_features, # variables crÃ©Ã©es Ã  l'aide des tweets (features TF IDF)
+                             train_location, # variables crÃ©Ã©es Ã  partir des localisations
+                             train_variables_extracted], # variables crÃ©Ã©es via l'extraction de donnÃ©es dans les tweets
+                             axis='columns')
+
+    X_train = final_train.reset_index(drop=True)
+
+    print(train)
+    print('phase 8')
+
+    if sample_type == 'train':
+        if 'target' in train:
+            y_train = train['target']
+            return X_train, y_train
+    
     else:
         return X_train
-        print('Préparation soumission OK')
+
+def vectorizerCreate(train):
+    train['location'] = train['location'].astype(str)
+    train['city'] = train['location'].apply(city)
+    train['country'] = train['location'].apply(country)
+    train['precision'] = train['location'].apply(precision)
+    train['hashtags_b'] = train['text'].apply(recupHashtagBinaire)
+    train['names_b'] = train['text'].apply(recupNameBinaire)
+    train['dates'] = train['text'].apply(recupDate)
+    train['dates_b'] = train['text'].apply(recupDateBinaire)
+    train['locations'] = train['text'].apply(getLocation)
+    train['locations_b'] = train['text'].apply(getLocationBinaire)
+    train['rt_path_b'] = train['text'].apply(getCheminBinaire)
+    train['Subjectivity'] = train['text'].apply(getSubjectivity)
+    train['Polarity'] = train['text'].apply(getPolarity)
+    train['text_CLEAN'] = train['text'].apply(lambda x: preprocessing(x))
+    train['text_CLEAN_LMT'] = Lemmatization(train,train['text_CLEAN'])
+    train['text_CLEAN_LMT_TOKEN'] = train['text_CLEAN_LMT'].apply(lambda x: tokenize(x))
+
+    global nlp
+    global stopwords
+    stopwords = [word.lower() for word in stopwords]
+
+    train['text_CLEAN_LMT_TOKEN_WSW'] = train['text_CLEAN_LMT_TOKEN'].apply(lambda x: remove_stopwords(x))
+
+    data_words_train = train['text_CLEAN_LMT_TOKEN_WSW'].values.tolist()
+    bigram = gensim.models.Phrases(data_words_train, min_count=5, threshold=0,scoring = 'npmi')
+    bigram_mod = gensim.models.phrases.Phraser(bigram)
+
+    def make_bigrams(texts):
+        return [bigram_mod[text] for text in texts]
+
+    train['text_CLEAN_LMT_TOKEN_WSW_BIGRAMS'] = make_bigrams(data_words_train)
+
+    def detokenize_text(txt):
+        txt = ' '.join([word for word in txt])
+        return txt
+
+    train['text_CLEAN_LMT_WSW_BIGRAMS'] = train['text_CLEAN_LMT_TOKEN_WSW_BIGRAMS'].apply(lambda x: detokenize_text(x))
+
+    vectorizer = TfidfVectorizer()
+    vectorizer_fit = vectorizer.fit(train['text_CLEAN_LMT_WSW_BIGRAMS'].astype('U'))
+    joblib.dump(vectorizer_fit,'vectorizer.gz')

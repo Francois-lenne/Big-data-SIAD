@@ -57,7 +57,9 @@ class TweetCheckerModel:
     def prepare(self):
         if not self.imported == True:
             raise Exception("La préparation est impossible car les données non pas été encore importées")
-        self.X_train, self.y_train = transformation(self.train,trainning = True)
+        vectorizerCreate(self.train)
+        self.X_train, self.y_train = DataPreparation(self.train,sample_type = 'train')
+        print("Entraînement OK")
        
 
         
@@ -74,7 +76,8 @@ class TweetCheckerModel:
         if not self.trained == True and os.path.exists('model.gz') == False:
             raise Exception("Le model n'a pas été entraîné")
         self.model = joblib.load('model.gz')
-        sub_trans = transformation(sub,trainning = False)
-        reponse = self.model.predict(sub_trans)
-        return reponse
+        sub_trans = DataPreparation(sub)
+        print(sub_trans)
+        # reponse = self.model.predict(sub_trans)
+        return sub_trans
 

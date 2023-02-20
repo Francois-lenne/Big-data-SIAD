@@ -4,6 +4,9 @@ from pydantic import BaseModel
 from model import *
 import json
 
+#uvicorn --reload main:app
+
+
 app = FastAPI()
 
 app.add_middleware(
@@ -30,13 +33,13 @@ async def check(tweet: Tweet):
     model.train()
     X = np.array([[var1, var2]])
     y_pred = model.predict(X)
-    return {"resultat": y_pred.tolist()}
+    return {"resultat": y_pred.tolist(),"truevalue":str(78),"falsevalue":str(22)}
 
 
 @app.get("/predict")
 def predict(var1: float,var2: float):
     y = var1 + var2
-    return {"y": y}
+    return {"resultat": y,"truevalue":80,"falsevalue":20}
 
 @app.get("/test")
 async def predict(var1: int, var2: int):
