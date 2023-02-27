@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disaster Tweets</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <section id="menu" style="height: 2cm">
+
+      <nav class="navbar fixed-top navbar-light bg-light shadow-sm">
+      <a class="navbar-brand" href="app.html">
+       
+          <img src="includes/logo.png" width="71" height="60">
+      </a>
+      <ul class="nav justify-content-end">
+      <a class="navbar-item">
+  
+          <button class="btn btn-light" id="iconepresentation" role="button">
+          <img class="mr-1" src="includes/home1.svg" width="35" height="35">
+        </button>
+      </a>
+      <a class="navbar-item">
+          
+          <button class="btn btn-light" id="iconemodele" role="button">
+          <img class="mr-1" src="includes/tweet.svg" width="35" height="35">
+          </button>
+        </a>
+        <a class="navbar-item">
+          <button class="btn btn-light" id="iconesource" role="button">
+          <img class="mr-1" src="includes/biblio.svg" width="35" height="35">
+          </button>
+      </a>
+    </ul>
+
+    </nav>
+  
+    </section>
+    
+  <section class="mt-4" id="presentation">
+    <div class="container">
+          <div class="col-12 mb-5">
+          </div>
+          <div class="p-2" style="text-align: center;">
+            <h1 class="pb-2 border-bottom">Présentation de l'entreprise</h1>
+          </div>
+          <div class="mb-3 text-center" style="background-color:#e3f2fd; border-radius: 10px ">
+              <p class="lead" style="text-align: justify;"> VISIONSIAD est une entreprise de service du numérique (ESN) créée par quatre jeunes étudiants en master systèmes d'information et aide à la décision (SIAD) de l'université de Lille. Nous proposons des solutions sur mesure pour les entreprises qui cherchent à améliorer leur efficacité et leur rentabilité grâce à l'utilisation de leurs données. Nous sommes passionnés par notre travail et nous nous engageons à offrir à nos clients des solutions innovantes et fiables en accord avec nos valeurs et qui répondent aux besoins transmis. Pour le moment, notre équipe est composée de ses 4 fondateurs et souhaite s'agrandir au fils des années pour acquerir plus de diversité et d'expérience dans ces domaines. Nous proposons des services de conseil sur les base de données, de développement de logiciels, de gestion de projet, de sécurité informatique et de maintenance de système d'informations. Nous avons travaillé avec des entreprises comme Auchan, LVMH, HSBC, Décathlon, Bayer qui travail dans divers secteurs d'activité, en leur fournissant des solutions sur mesure pour répondre à leurs demandes. Notre entreprise se distingue par son approche personnalisée, son engagement envers la qualité de ses réponses, le suivi de ses salariés et de ses clients. </p>
+          </div>
+          <div class="mb-5">
+          </div>
+          <div class ="d-flex flex-column mb-3">
+            <div class="p-2" style="text-align: center;">
+              <h1 class="pb-2 border-bottom">Les Valeurs</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-row mb-3 mg-3">
+            <div class="p-2 mx-2" style="text-align: center; width: 30rem; background-color:#e3f2fd; border-radius: 10px"> 
+              <img src="includes/excellent.svg" style="width: 25%; height: auto;">
+              <h3 class="fs-2">Excellence</h3>
+              <div style="text-align: justify; ">
+                <p>Exigence de soi et des autres. Passion de la data, des services, de la relation. L’excellence nous guide : nous ne nous contentons pas de faire mieux, nous avons l’ambition d’offrir le meilleur à chacun et à tous nos clients.</p>
+              </div>
+            </div>
+            <div class="p-2 mx-2" style="text-align: center; width: 30rem; background-color:#e3f2fd; border-radius: 10px"> 
+              <img src="includes/globe.svg" style="width: 25%; height: auto;">
+              <h3 class="fs-2">Environnement</h3>
+              <div style="text-align: justify; ">
+                <p>Durabilité et responsabilité environnementale : Notre entreprise soucieuse de l'environnement peut adopter des pratiques durables pour réduire son impact sur l'environnement, la réduction des déchets et le recyclage. Cela peut également impliquer la mise en place d'algorithme responsable pour conserver notre neutralité carbone.</p>
+              </div>
+            </div>
+            <div class="p-2 mx-2" style="text-align: center; width: 30rem; background-color:#e3f2fd; border-radius: 10px">
+              <img src="includes/egalite.svg" style="width: 25%; height: auto;">
+              <h3 class="fs-2">Egalité</h3>
+              <div style="text-align: justify; ">
+                <p>La volonté de responsabiliser les collaborateurs et collaboratrices, d'écouter, de faire prendre les décisions à un niveau aussi proche que possible de ceux qui auront à les exécuter. La confiance consiste aussi à privilégier au sein de l’entreprise une grande ouverture aux autres et une circulation aussi large que possible des idées et des informations.</p>
+              </div>
+            </div>
+            <div class="p-2 mx-2" style="text-align: center; width: 30rem; background-color:#e3f2fd; border-radius: 10px"> 
+              <img src="includes/confiance.svg" style="width: 25%; height: auto; ">
+              <h3 class="fs-2">Confiance</h3>
+              <div style="text-align: justify; ">
+                <p>La volonté de responsabiliser les collaborateurs et collaboratrices, d'écouter, de faire prendre les décisions à un niveau aussi proche que possible de ceux qui auront à les exécuter. La confiance consiste aussi à privilégier au sein de l’entreprise une grande ouverture aux autres et une circulation aussi large que possible des idées et des informations.</p>
+              </div>
+            </div>
+          </div> 
+          <div class="mb-5">
+          </div>
+          <div class ="d-flex flex-column mb-3">
+            <div class="p-2" style="text-align: center;">
+              <h1 class="pb-2 border-bottom">L'équipe</h1>
+            </div>
+          </div>
+              <div class="row" style="background-color:#e3f2fd; border-radius: 10px;">
+                <div class="col-3" style="text-align: center;"> 
+                  <a href="https://www.linkedin.com/in/yoann-playez-075ab7207/?originalSubdomain=fr">
+                    <img class="rounded-circle" width="105" height="105" src="includes/YOANN.jfif" role="img" aria-label="Placeholder: 105x105" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  </a>   
+                  <title>Tech Lead</title>
+                  <rect width="100%" height="100%" fill="#777">
+                  </rect>
+                  <text x="50%" y="50%" fill="#777" dy=".4em">
+                  </text>
+                  <h3 class="fw-normal">Yoann</h3>
+                  <p>Tech Lead</p>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                  <a href="https://fr.linkedin.com/in/ronan-patin-186aab192">
+                    <img class="bd-placeholder-img rounded-circle" width="105" height="105" src="includes/RONAN.jfif" role="img" aria-label="Placeholder: 105x105" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  </a>  
+                  <title>Développeur Web </title>
+                  <rect width="100%" height="100%" fill="#777">
+                  </rect>
+                  <text x="50%" y="50%" fill="#777" dy=".4em">
+                  </text>
+                  <h3 class="fw-normal"> Ronan </h3>
+                  <p>Designer Web </p>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                  <a href="https://www.linkedin.com/in/fran%C3%A7ois-lenne-5975b9174/?originalSubdomain=fr">
+                    <img class="bd-placeholder-img rounded-circle" width="105" height="105" src="includes/FRANCOIS.jfif" role="img" aria-label="Placeholder: 105x105" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  </a>
+                  <title>Chef de Projet</title>
+                  <rect width="100%" height="100%" fill="#777">
+                  </rect>
+                  <text x="50%" y="50%" fill="#777" dy=".4em">
+                  </text>
+                  <h2 class="fw-normal">Chef de Projet</h2>
+                  <p>Francois est le plus beau des Francois</p>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                  <a href="https://www.linkedin.com/in/louis-toulouse/?originalSubdomain=fr">
+                    <img class="bd-placeholder-img rounded-circle" width="105" height="105" src="includes/LOUIS.jfif" role="img" aria-label="Placeholder: 105x105" preserveAspectRatio="xMidYMid slice" focusable="false" href="https://www.linkedin.com/in/yoann-playez-075ab7207/?originalSubdomain=fr"> 
+                  </a>
+                    <title>Expert NLP</title>
+                    <rect width="100%" height="100%" fill="#777">
+                    </rect>
+                    <text x="50%" y="50%" fill="#777" dy=".4em">
+                    </text>
+                    <h2 class="fw-normal">Expert NLP</h2>
+                    <p>Louis est le plus beau des Louis</p>
+                </div>
+              </div>
+            </div>
+        </div>
+  </section>
+
+  <section class="mt-4" id="modele">
+    <div class="container-fluid">
+        <div class="row" id="main_content">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="card shadow-sm" style="width: 50rem;">
+                <div class="card-header">
+                  <p class="fw-bold">Tweet checker <span class="badge text-bg-warning fw-bold">Version 1.O</span></p>
+                </div>
+                <div class="card-body">
+                  <div class="alert alert-primary d-flex align-items-center" role="alert" id="boxalert">
+                    <div class="col-8" id="textalert">
+                      Le modèle est prêt à vérifier ton tweet.
+                    </div>
+                    <div class="col-4 d-grid gap-2 d-md-flex justify-content-md-end" id="rightalert">
+                      <div class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle" id="infobut"href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Détails
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li>
+                            <p class="text-center fw-bold m-2">Probabilité</p>
+                            <div class="progress-stacked m-2">
+                              <div class="progress" role="progressbar" aria-label="Segment one" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%" id="truebar">
+                                <div class="progress-bar bg-success">Vrai</div>
+                              </div>
+                              <div class="progress" role="progressbar" aria-label="Segment two" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%" id="falsebar">
+                                <div class="progress-bar bg-danger">Faux</div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                            <div class="col-6">
+                            <p class="text-center fw-bold m-2 text-success">Vrai :</p>
+                          </div>
+                          <div class="col-6">
+                            <p class="text-center fw-bold m-2" id="truefinfo">80%</p>
+                            </div>
+                          </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-6">
+                            <p class="text-center fw-bold m-2 text-danger">Faux :</p>
+                              </div>
+                              <div class="col-6">
+                            <p class="text-center fw-bold m-2" id="falsefinfo">20%</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control" id="tweettext" rows="10" placeholder="Copier votre tweet ici"></textarea>
+                  </div>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn btn-outline-dark" id="submitbut" role="button">
+                    Vérifier
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+    </div>
+  </section>
+
+  <section class="mt-4" id="source">
+    <div class="container-fluid">
+        <div class="row" id="main_content">
+            <div class="col-12 d-flex justify-content-center">
+            
+            </div>
+            
+        </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  
+  </body>
+</html>
