@@ -78,6 +78,6 @@ class TweetCheckerModel:
         self.model = joblib.load('model.gz')
         sub_trans = DataPreparation(sub,False)
         print(sub_trans)
-        # reponse = self.model.predict(sub_trans)
-        return sub_trans
+        reponse = self.model.predict(sub_trans)
+        return reponse
 

@@ -32,8 +32,13 @@ function requestFailed(){
 }
 
 function showLoading(){
-  $("#rightalert").append('<div class="spinner-border text-primary" role="status" id="loadalert"><span class="visually-hidden"></span></div>');
-  $("#textalert").text("Traitement en cours...");
+  if($('#rightalert')){
+    $("#textalert").text("Traitement en cours...");
+  }
+  else{
+    $("#rightalert").append('<div class="spinner-border text-primary" role="status" id="loadalert"><span class="visually-hidden"></span></div>');
+    $("#textalert").text("Traitement en cours...");
+  }
 }
 
 function hideLoading(){
