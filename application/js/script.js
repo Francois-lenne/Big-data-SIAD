@@ -68,9 +68,8 @@ $(document).ready(function() {
   });
 
   $("#iconesource").click(function() {
-    $("#source").show();
-    $("#presentation").hide();
-    $("#modele").hide();
+    window.open("https://github.com/Francois-lenne/Big-data-SIAD", "_blank").focus();
+    
   });
 
   $('#submitbut').click(function() {
