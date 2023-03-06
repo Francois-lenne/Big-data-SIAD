@@ -55,7 +55,7 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 - :construction_worker: Feature engineering
 -  :bookmark_tabs: Rédaction du rapport
 -  :chart_with_upwards_trend: Modélisations BERT
--  :construction: Création de la pipeline de machine learning
+-  :construction: Test de plusieurs modélisations
 
 ## Package utilisé pour réaliser les retraitements et le modèle
 
