@@ -31,7 +31,7 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 ## Développements réalisés par Ronan 
 
 - :man_technologist: Développements du **front-end** du site web
-- :pilot: gestion de projet (trello, répartition des tâches)
+- :pilot: Gestion de projet (trello, répartition des tâches)
 -  :bookmark_tabs: Rédaction du rapport
 -  :chart_with_upwards_trend: Modélisations BERT
 
