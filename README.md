@@ -23,17 +23,44 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 ## Stack technique du projet :computer:
 
 
-[![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,regex,html,css)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,github,vscode,regex,html,css,js,fastapi,bootstrap,gcp)](https://skills.thijs.gg)
 
 
 # Les développements 
 
+## Développements réalisés par Ronan 
 
+- :man_technologist: Développements du **front-end** du site web
+- :pilot: Gestion de projet (trello, répartition des tâches)
+-  :bookmark_tabs: Rédaction du rapport
+-  :chart_with_upwards_trend: Modélisations BERT
+
+## Développements réalisés par Yoann  
+
+- :man_technologist: Développements du **back end** du site web
+-  :bookmark_tabs: Rédaction du rapport
+-  :chart_with_upwards_trend: Modélisations BERT
+-  :globe_with_meridians: Déploiements du site web
+
+## Développements réalisés par François  
+
+- :construction_worker: Feature engineering
+-  :bookmark_tabs: Rédaction du rapport
+-  :chart_with_upwards_trend: Modélisations BERT
+-  :globe_with_meridians: Déploiements du site web
+
+
+## Développements réalisés par Louis  
+
+- :construction_worker: Feature engineering
+-  :bookmark_tabs: Rédaction du rapport
+-  :chart_with_upwards_trend: Modélisations BERT
+-  :construction: Test de plusieurs modélisations
 
 ## Package utilisé pour réaliser les retraitements et le modèle
 
 
-* [Pandas](https://pandas.pydata.org/)
+* [Pandas](https://pandas.pydata.org/) 
 * [Numpy](https://numpy.org/)
 * [tqdm](https://tqdm.github.io/)
 * [re](https://docs.python.org/3/library/re.html)
@@ -41,15 +68,6 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [sympi](https://www.sympy.org/en/index.html)
 * [geotext](https://pypi.org/project/geotext/)
 * [Sklearn](https://scikit-learn.org/stable/)
-
-
-
-## Les fonctions a implémenté 
-
-
-### 
-
-
 
 
 
