@@ -23,7 +23,7 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 ## Stack technique du projet :computer:
 
 
-[![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,regex,html,css)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,regex,html,css,js)](https://skills.thijs.gg)
 
 
 # Les développements 
