@@ -60,14 +60,15 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 ## Package utilisé pour réaliser les retraitements et le modèle
 
 
-* [Pandas](https://pandas.pydata.org/) 
-* [Numpy](https://numpy.org/)
-* [tqdm](https://tqdm.github.io/)
-* [re](https://docs.python.org/3/library/re.html)
-* [spacy](https://spacy.io/usage)
-* [sympi](https://www.sympy.org/en/index.html)
-* [geotext](https://pypi.org/project/geotext/)
-* [Sklearn](https://scikit-learn.org/stable/)
+* [Pandas](https://pandas.pydata.org/) {Version 1.5.3}
+* [Numpy](https://numpy.org/) {Version 1.24.2}
+* [tqdm](https://tqdm.github.io/) {Version 4.65.0}
+* [re](https://docs.python.org/3/library/re.html) {Version 3.11.2 }
+* [spacy](https://spacy.io/usage) {Version 3.5}
+* [sympi](https://www.sympy.org/en/index.html) {Version 1.7.1}
+* [geotext](https://pypi.org/project/geotext/) {Version 0.4.0}
+* [Sklearn](https://scikit-learn.org/stable/) {Version 1.2.2}
+* [Tensorflow](https://pypi.org/project/tensorflow/) {Version 2.11.0}
 
 
 
