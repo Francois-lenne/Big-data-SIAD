@@ -74,10 +74,10 @@ $(document).ready(function() {
 
   $('#submitbut').click(function() {
 
-    var input1 = $("#tweettext").val();
+    var tweet = $("#tweettext").val();
 
     
-    if(input1 === ""){
+    if(tweet === ""){
 
     $("#textalert").text("Le champs est vide");
     $("#boxalert").removeClass($("#boxalert").attr('class')).addClass("alert alert-warning d-flex align-items-center");
@@ -86,13 +86,13 @@ $(document).ready(function() {
     }
     else{
     showLoading();
-    console.log(input1)
+    console.log(tweet)
     
 
   $.ajax({
    url: "http://localhost:8000/check",
    type: "POST",
-   data: JSON.stringify({ "var1": input1, "var2": 3 }),
+   data: JSON.stringify({ "text": tweet}),
    contentType: "application/json; charset=utf-8",
    dataType: "json",
    success: function (data) {

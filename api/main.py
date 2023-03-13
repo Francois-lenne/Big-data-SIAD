@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from model import *
+import joblib
 import json
 
 #uvicorn --reload main:app
@@ -18,8 +19,7 @@ app.add_middleware(
 )
 
 class Tweet(BaseModel):
-    var1: int
-    var2: int
+    text: str
 
 @app.get("/")
 async def root():
@@ -27,27 +27,11 @@ async def root():
 
 @app.post("/check")
 async def check(tweet: Tweet):
-    var1 = tweet.var1
-    var2 = tweet.var2
-    model = ClassificationModel()
-    model.train()
-    X = np.array([[var1, var2]])
-    y_pred = model.predict(X)
-    return {"resultat": y_pred.tolist(),"truevalue":str(78),"falsevalue":str(22)}
-
-
-@app.get("/predict")
-def predict(var1: float,var2: float):
-    y = var1 + var2
-    return {"resultat": y,"truevalue":80,"falsevalue":20}
-
-@app.get("/test")
-async def predict(var1: int, var2: int):
-    model = ClassificationModel()
-    model.train()
-    X = np.array([[var1, var2]])
-    y_pred = model.predict(X)
-    return {"resultat": y_pred.tolist()}
+    text = tweet.text
+    model = TweetCheckerModel()
+    df_tweet = pd.DataFrame({'id': [1], 'keyword': [''], 'location': [''], 'text': [text]})
+    y_pred, prob1, prob2 = model.submit(df_tweet)
+    return {"resultat": y_pred.tolist(),"truevalue":str(prob1),"falsevalue":str(prob2)}
 
 #curl http://localhost:8000/predict?var1=2&var2=3
 
