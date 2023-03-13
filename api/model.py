@@ -1,38 +1,12 @@
 import joblib
-from sklearn.linear_model import LogisticRegression
-import numpy as np
+import pandas as pd
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from functions import *
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import accuracy_score ,classification_report,confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-
-class ClassificationModel:
-    def __init__(self):
-        self.model = LogisticRegression(solver='lbfgs')
-        self.trained = False
-        self.X = np.array([[1, 2], [2, 3], [3, 4], [4, 5]])
-        self.y = np.array([0, 1, 0, 1])
-
-    def train(self):
-        self.model.fit(self.X, self.y)
-        self.trained = True
-
-    def predict(self, X):
-        if not self.trained:
-            raise Exception("Model not trained yet.")
-        y_pred = self.model.predict(X)
-        return y_pred
-
-
-
 
 class TweetCheckerModel:
 
@@ -64,9 +38,7 @@ class TweetCheckerModel:
         joblib.dump(self.model,'api/model.gz')
         joblib.dump(self.classifier,'api/classifier.gz')
         print("Entraînement OK")
-       
-
-    
+          
 
     def submit(self,sub):
         if not self.trained == True and os.path.exists('model.gz') == False and os.path.exists('classifier.gz') == False:

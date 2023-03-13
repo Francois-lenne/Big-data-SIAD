@@ -1,10 +1,7 @@
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from model import *
-import joblib
-import json
-
 #uvicorn --reload main:app
 
 
