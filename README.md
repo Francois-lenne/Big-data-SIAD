@@ -20,55 +20,66 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [Virginie Deslart](https://www.linkedin.com/in/virginie-delsart-9a45b81b9/?originalSubdomain=fr), Clerse/ULille
 
 
-Ce projet Python a été créé pour démontrer l'utilisation de certaines fonctionnalités du langage Python.
+## Stack technique du projet :computer:
+
+[![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,github,vscode,regex,html,css,js,fastapi,bootstrap,gcp)](https://skills.thijs.gg)
 
 # Installation
 
 Pour utiliser ce projet, vous devez avoir Python 3 installé sur votre ordinateur. Vous pouvez télécharger Python 3 à partir du site web officiel de Python.
 
 ***
-Clonez ce dépôt de code à l'aide de la commande git clone <url_du_depot> dans votre terminal.
+Clonez ce dépôt de code à l'aide de la commande git clone <https://github.com/Francois-lenne/Big-data-SIAD.git> dans votre terminal.
 ```
-$ clone https://example.com
+git clone https://github.com/Francois-lenne/Big-data-SIAD.git
 
 ```
 
-***
 Allez dans le répertoire du projet à l'aide de la commande : 
 ```
-$ cd Big-data-SIAD/api
+cd Big-data-SIAD/api
 
 ```
 
-Installez les dépendances en utilisant la commande pip install -r requirements.txt.
-
-
-Installez les dépendances en utilisant la commande
+Installez les dépendances python en utilisant la commande
 ```
-$ cd pip install -r requirements.txt
+cd pip install -r requirements.txt
 
 ```
+***
 
 # Utilisation
 
 Une fois que vous avez installé les dépendances, vous pouvez utiliser ce projet Python en suivant les instructions suivantes :
 
+***
+
 Ouvrez votre terminal et accédez au répertoire du projet.
+```
 cd Big-data-SIAD/api
-Exécutez la commande suivante :
-uvicorn --reload main:app
-Une fois que l'application est lancée, il y a deux cas de figure :
-- Les sauvegardes du modèle existent, l'API est fonctionelle
-Ouvrez dans un navigateur web le fichier app.html
-- Les sauvegardes n'existent pas, vous devez déclencher le script prepare.py pour entraîner le modèle avec le jeu de données du projet.
-Exécutez la commande suivante :
+
+```
+
+Lancez l'entraînement du modèle avec la commande :
+
+```
 python prepare.py
 
+```
+
+Exécutez la commande suivante :
+
+```
+uvicorn --reload main:app
+
+```
+
+L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier app.html et soumettre vos tweets.
+
+***
+
+
 # Contributeurs
-
-## Stack technique du projet :computer:
-
-[![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,github,vscode,regex,html,css,js,fastapi,bootstrap,gcp)](https://skills.thijs.gg)
 
 ## Développements réalisés par Ronan 
 
