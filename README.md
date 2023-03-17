@@ -20,42 +20,65 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [Virginie Deslart](https://www.linkedin.com/in/virginie-delsart-9a45b81b9/?originalSubdomain=fr), Clerse/ULille
 
 
+Ce projet Python a été créé pour démontrer l'utilisation de certaines fonctionnalités du langage Python.
+
+# Installation
+
+Pour utiliser ce projet, vous devez avoir Python 3 installé sur votre ordinateur. Vous pouvez télécharger Python 3 à partir du site web officiel de Python.
+
+Clonez ce dépôt de code à l'aide de la commande git clone <url_du_depot> dans votre terminal.
+Allez dans le répertoire du projet à l'aide de la commande cd Big-data-SIAD/api.
+Installez les dépendances en utilisant la commande pip install -r requirements.txt.
+
+# Utilisation
+
+Une fois que vous avez installé les dépendances, vous pouvez utiliser ce projet Python en suivant les instructions suivantes :
+
+Ouvrez votre terminal et accédez au répertoire du projet.
+cd Big-data-SIAD/api
+Exécutez la commande suivante :
+uvicorn --reload main:app
+Une fois que l'application est lancée, il y a deux cas de figure :
+- Les sauvegardes du modèle existent, l'API est fonctionelle
+Ouvrez dans un navigateur web le fichier app.html
+- Les sauvegardes n'existent pas, vous devez déclencher le script prepare.py pour entraîner le modèle avec le jeu de données du projet.
+Exécutez la commande suivante :
+python prepare.py
+
+# Contributeurs
+
 ## Stack technique du projet :computer:
 
-
 [![My Skills](https://skills.thijs.gg/icons?i=py,tensorflow,md,git,github,vscode,regex,html,css,js,fastapi,bootstrap,gcp)](https://skills.thijs.gg)
-
-
-# Les développements 
 
 ## Développements réalisés par Ronan 
 
 - :man_technologist: Développements du **front-end** du site web
 - :pilot: Gestion de projet (trello, répartition des tâches)
--  :bookmark_tabs: Rédaction du rapport
--  :chart_with_upwards_trend: Modélisations BERT
+- :bookmark_tabs: Rédaction du rapport
+- :chart_with_upwards_trend: Modélisations BERT
 
 ## Développements réalisés par Yoann  
 
 - :man_technologist: Développements du **back end** du site web
--  :bookmark_tabs: Rédaction du rapport
--  :chart_with_upwards_trend: Modélisations BERT
--  :globe_with_meridians: Déploiements du site web
+- :bookmark_tabs: Rédaction du rapport
+- :chart_with_upwards_trend: Modélisations BERT
+- :globe_with_meridians: Déploiements du site web
 
 ## Développements réalisés par François  
 
 - :construction_worker: Feature engineering
--  :bookmark_tabs: Rédaction du rapport
--  :chart_with_upwards_trend: Modélisations BERT
--  :globe_with_meridians: Déploiements du site web
+- :bookmark_tabs: Rédaction du rapport
+- :chart_with_upwards_trend: Modélisations BERT
+- :globe_with_meridians: Déploiements du site web
 
 
 ## Développements réalisés par Louis  
 
 - :construction_worker: Feature engineering
--  :bookmark_tabs: Rédaction du rapport
--  :chart_with_upwards_trend: Modélisations BERT
--  :construction: Test de plusieurs modélisations
+- :bookmark_tabs: Rédaction du rapport
+- :chart_with_upwards_trend: Modélisations BERT
+- :construction: Test de plusieurs modélisations
 
 ## Package utilisé pour réaliser les retraitements et le modèle
 
@@ -69,6 +92,11 @@ Le projet est encadré par deux enseignant chercheur de l'université de Lille :
 * [geotext](https://pypi.org/project/geotext/) {Version 0.4.0}
 * [Sklearn](https://scikit-learn.org/stable/) {Version 1.2.2}
 * [Tensorflow](https://pypi.org/project/tensorflow/) {Version 2.11.0}
+
+
+# Licence
+Ce projet est sous licence MIT. Consultez le fichier LICENSE.md pour plus d'informations.
+
 
 
 
