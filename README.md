@@ -43,7 +43,6 @@ $ cd Big-data-SIAD/api
 Installez les dépendances en utilisant la commande pip install -r requirements.txt.
 
 
-***
 Installez les dépendances en utilisant la commande
 ```
 $ cd pip install -r requirements.txt
