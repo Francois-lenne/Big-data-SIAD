@@ -26,9 +26,29 @@ Ce projet Python a été créé pour démontrer l'utilisation de certaines fonct
 
 Pour utiliser ce projet, vous devez avoir Python 3 installé sur votre ordinateur. Vous pouvez télécharger Python 3 à partir du site web officiel de Python.
 
+***
 Clonez ce dépôt de code à l'aide de la commande git clone <url_du_depot> dans votre terminal.
-Allez dans le répertoire du projet à l'aide de la commande cd Big-data-SIAD/api.
+```
+$ clone https://example.com
+
+```
+
+***
+Allez dans le répertoire du projet à l'aide de la commande : 
+```
+$ cd Big-data-SIAD/api
+
+```
+
 Installez les dépendances en utilisant la commande pip install -r requirements.txt.
+
+
+***
+Installez les dépendances en utilisant la commande
+```
+$ cd pip install -r requirements.txt
+
+```
 
 # Utilisation
 
