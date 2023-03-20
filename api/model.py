@@ -44,8 +44,8 @@ class TweetCheckerModel:
             R=logReg.predict(x_train)
             self.model.fit(x_train,y_train)
             y_pre=self.model.predict(x_test)
-            joblib.dump(self.model,'api/model.gz')
-            joblib.dump(self.classifier,'api/classifier.gz')
+            joblib.dump(self.model,'model.gz')
+            joblib.dump(self.classifier,'classifier.gz')
             print("Le modèle a été entraîné et sauvegardé")
           
 
