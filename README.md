@@ -35,15 +35,15 @@ git clone https://github.com/Francois-lenne/Big-data-SIAD.git
 
 ```
 
-Allez dans le répertoire du projet à l'aide de la commande : 
+Allez dans le répertoire (le chemin peut varier selon vos répertoires) du projet à l'aide de la commande : 
 ```
-cd Big-data-SIAD/api
+cd ~/GitHub/Big-data-SIAD/api
 
 ```
 
 Installez les dépendances python en utilisant la commande :
 ```
-cd pip install -r requirements.txt
+pip install -r requirements.txt
 
 ```
 ***
@@ -54,9 +54,9 @@ Une fois que vous avez installé les dépendances, vous pouvez utiliser ce proje
 
 ***
 
-Ouvrez votre terminal et accédez au répertoire du projet.
+Ouvrez votre terminal et accédez au répertoire du projet (le chemin peut varier selon vos répertoires).
 ```
-cd Big-data-SIAD/api
+cd ~/GitHub/Big-data-SIAD/api
 
 ```
 
