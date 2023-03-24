@@ -16,7 +16,7 @@ class TweetCheckerModel:
 
     def load(self):
         if os.path.exists('model.gz') == False or os.path.exists('classifier.gz') == False:
-            raise Exception("Aucune sauvegarde du modèle a été trouvé")
+            raise Exception("Aucune sauvegarde du modèle a été trouvé, , vous devez lancer le script prepare.py")
         else:
             self.model = joblib.load('model.gz')
             self.classifier = joblib.load('classifier.gz')
@@ -29,7 +29,7 @@ class TweetCheckerModel:
 
     def prepare(self):
         if not self.imported == True:
-            raise Exception("La préparation est impossible car les données non pas été encore importées, vous devez lancer le script prepare.py")
+            raise Exception("La préparation est impossible car les données non pas été encore importées")
         else:
             self.classifier=TfidfVectorizer()
             self.model = SVC(probability=True)
