@@ -1,8 +1,15 @@
+# Les librairies importées :
+# - spacy contient des dictionnaires destinées au NLP(Natural Language Processing)
+# - nltk contient des fonctions destinées au NLP(Natural Language Processing)
+
 import spacy
 import nltk
 from nltk.stem import PorterStemmer
 nlp = spacy.load("en_core_web_sm")
 stopwords = spacy.lang.en.stop_words.STOP_WORDS
+
+# Fonction clean
+# Tokenisation du texte, supression des stopwords, remplacement des mots par leur racine, jointure entre les mots.
 
 def clean(text):
     words = nltk.word_tokenize(text)

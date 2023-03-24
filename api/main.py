@@ -1,14 +1,20 @@
+# Les librairies importées :
+# - fastapi permet la création d'un API.
+# - pydantic permet de faire des modèles de validation de données.
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from model import *
-#uvicorn --reload main:app
+
+# L'API peut être lancé par a commande ci-dessous à condition d'être placé sur le répertoire contenant main.py.
+# uvicorn --reload main:app
 
 # Création de l'objet FastAPI
 
 app = FastAPI()
 
-# On autorise tous les types de requête
+# On autorise tous les types de requête.
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,26 +24,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Création de notre modèle vérification et chargement de la sauvegarde.
-# Si les sauvegardes n'existent pas une erreur sera retournée, le script prepare.py devra être lancé pour entraîner le modèle avec un jeu de données
+# Instanciation de l'objet TweetCheckerModel -> Modele NLP.
 
 model = TweetCheckerModel()
+
+# Chargement des sauvegardes du modèle si elle existe -> prepare.py permet de générer ces sauvegardes.
 model.load()
 
-# Création du format de données, il est simple dans notre cas avec la récupération d'un seul champ texte
+# Création du format de données, il est simple dans notre cas avec la récupération d'un seul champ texte.
 
 class Tweet(BaseModel):
     text: str
 
-# Requête par défaut, elle retourne des informations simples concernant l'API
+# Requête par défaut, elle retourne des informations simples concernant l'API.
 
 @app.get("/")
 async def root():
     return {"message": "Bonjour, je suis l'API TweetChecker Version 1.0"}
 
 # Requête pour la vérification des tweets : 
-# Input : Fichier JSON contenant le contenu du tweet
-# Ouput : Résultat de la prédiction du modèle
+# Input : Fichier JSON contenant le contenu du tweet.
+# Ouput : Résultat de la prédiction du modèle + probabilités de la prédiction.
 
 @app.post("/check")
 async def check(tweet: Tweet):
