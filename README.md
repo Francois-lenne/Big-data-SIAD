@@ -125,7 +125,7 @@ L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier a
 
 
 # Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE.md pour plus d'informations.
+Ce projet est sous licence MIT. Consultez le fichier LICENSE.txt pour plus d'informations.
 
 
 
