@@ -1,0 +1,13 @@
+Licence MIT :
+
+Permission est accordée, gratuitement, à toute personne obtenant une copie de ce projet et des fichiers de documentation associés (Big-data-SIAD),
+de traiter le projet sans restriction, y compris, sans limitation, les droits d'utilisation, de copie, de modification, de fusion, de publipostage, de distribution,
+de sous-licence et/ou de vente de copies du projet, ainsi que de permettre aux personnes à qui le projet est fourni de le faire,
+sous réserve des conditions suivantes :
+
+La mention copyright ci-dessus et cette permission sont incluses dans toutes les copies ou portions substantielles du projet.
+
+LE PROJET EST FOURNI "EN L'ÉTAT", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE, Y COMPRIS MAIS NON LIMITÉE AUX GARANTIES DE QUALITÉ MARCHANDE,
+D'ADAPTATION À UN USAGE PARTICULIER ET DE NON-VIOLATION. EN AUCUN CAS, LES AUTEURS OU LES TITULAIRES DE COPYRIGHT NE SERONT RESPONSABLES DE TOUT DOMMAGE,
+RÉCLAMATION OU AUTRE RESPONSABILITÉ, QUE CE SOIT DANS LE CADRE D'UN CONTRAT, D'UN DÉLIT OU AUTREMENT, EN PROVENANCE DE, HORS DE OU EN RELATION 
+AVEC LE PROJET OU SON UTILISATION OU D'AUTRES DEALINGS DANS LE PROJET.
