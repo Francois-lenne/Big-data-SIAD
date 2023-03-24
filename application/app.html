@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
+  <!-- Tête contanant les méta-données + références vers la framework bootstrap (front-end)  -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,26 +11,29 @@
   </head>
   <body>
 
+    <!-- Section concernant la barre du menu -->
+
     <section id="menu" style="height: 2cm">
 
       <nav class="navbar fixed-top navbar-light bg-light shadow-sm">
+        <!-- Icone accueil -->
       <a class="navbar-brand" href="app.html">
-       
           <img class="mx-2" src="includes/logo.png" width="71" height="60">
       </a>
       <ul class="nav justify-content-end">
+        <!-- Icone presentation <=> accueil -->
       <a class="navbar-item">
-  
           <button class="btn btn-light" id="iconepresentation" role="button">
           <img class="mr-1" src="includes/home1.svg" width="35" height="35">
         </button>
       </a>
+      <!-- Icone modèle <=> application web -->
       <a class="navbar-item">
-          
           <button class="btn btn-light" id="iconemodele" role="button">
           <img class="mr-1" src="includes/tweet.svg" width="35" height="35">
           </button>
         </a>
+        <!-- Icone source <=> lien vers projet GitHub -->
         <a class="navbar-item">
           <button class="btn btn-light" id="iconesource" role="button">
           <img class="mr-1" src="includes/github.svg" width="35" height="35">
@@ -40,6 +44,8 @@
     </nav>
   
     </section>
+
+  <!-- Section concernant "l'onglet" presentation  -->
     
   <section class="mt-4" id="presentation">
     <div class="container">
@@ -149,6 +155,8 @@
         </div>
   </section>
 
+  <!-- Section concernant "l'onglet" modèle  -->
+
   <section class="mt-4" id="modele">
     <div class="container-fluid">
         <div class="row" id="main_content">
@@ -219,17 +227,7 @@
         </div>
     </div>
   </section>
-
-  <section class="mt-4" id="source">
-    <div class="container-fluid">
-        <div class="row" id="main_content">
-            <div class="col-12 d-flex justify-content-center">
-            
-            </div>
-            
-        </div>
-    </div>
-  </section>
+  <!-- Scripts javascript importés jQuery + script.js  -->  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/script.js"></script>
   
