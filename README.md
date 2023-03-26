@@ -86,20 +86,20 @@ L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier a
 - :man_technologist: Développements du **front-end** du site web
 - :pilot: Gestion de projet (trello, répartition des tâches)
 - :bookmark_tabs: Rédaction du rapport
-- :chart_with_upwards_trend: Modélisations BERT
+- :chart_with_upwards_trend: Modélisations
 
 ## Développements réalisés par Yoann  
 
 - :man_technologist: Développements du **back end** du site web
 - :bookmark_tabs: Rédaction du rapport
-- :chart_with_upwards_trend: Modélisations BERT
+- :chart_with_upwards_trend: Modélisations
 - :globe_with_meridians: Déploiements du site web
 
 ## Développements réalisés par François  
 
 - :construction_worker: Feature engineering
 - :bookmark_tabs: Rédaction du rapport
-- :chart_with_upwards_trend: Modélisations BERT
+- :chart_with_upwards_trend: Modélisations
 - :globe_with_meridians: Déploiements du site web
 
 
@@ -107,7 +107,7 @@ L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier a
 
 - :construction_worker: Feature engineering
 - :bookmark_tabs: Rédaction du rapport
-- :chart_with_upwards_trend: Modélisations BERT
+- :chart_with_upwards_trend: Modélisations
 - :construction: Test de plusieurs modélisations
 
 ## Package utilisé pour réaliser les retraitements et le modèle
