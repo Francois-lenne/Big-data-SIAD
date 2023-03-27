@@ -74,7 +74,7 @@ uvicorn --reload main:app
 
 ```
 
-L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier app.html et soumettre vos tweets.
+L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier __app.html__ et soumettre vos tweets.
 
 ***
 
