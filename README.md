@@ -120,11 +120,11 @@ L'application est lancé, vous pouvez ouvrir dans un navigateur web le fichier a
 * [sympi](https://www.sympy.org/en/index.html) {Version 1.7.1}
 * [geotext](https://pypi.org/project/geotext/) {Version 0.4.0}
 * [Sklearn](https://scikit-learn.org/stable/) {Version 1.2.2}
-* [FastAPI](https://styles.redditmedia.com/t5_22y58b/styles/communityIcon_r5ax236rfw961.png) {Version 0.89.1}
-* [joblib](https://joblib.readthedocs.io/en/latest/_static/joblib_logo.svg) {Version 1.2.0}
-* [nltk](https://miro.medium.com/v2/resize:fit:592/0*zKRz1UgqpOZ4bvuA) {Version 3.8.1}
-* [pydantic](https://avatars.githubusercontent.com/u/110818415?s=280&v=4) {Version 1.10.4}
-* [unvicorn](https://raw.githubusercontent.com/tomchristie/uvicorn/master/docs/uvicorn.png) {Version 0.21.1}
+* [FastAPI](https://fastapi.tiangolo.com/) {Version 0.89.1}
+* [joblib](https://joblib.readthedocs.io/en/latest/) {Version 1.2.0}
+* [nltk](https://www.nltk.org/) {Version 3.8.1}
+* [pydantic](https://docs.pydantic.dev/) {Version 1.10.4}
+* [unvicorn](https://www.uvicorn.org/) {Version 0.21.1}
 
 
 # Licence
